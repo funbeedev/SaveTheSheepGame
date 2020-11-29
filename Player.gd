@@ -21,16 +21,17 @@ func _on_Player_body_entered(body):
 	
 	print("Player: Hit by Node: %s" %body.get_name())
 	
-	# if player collides with Mob - game over
-	if body.get_name() == "Mob":
-		hide() # player dissapears after being hit
-		emit_signal("hit")
-
 	# if player collides with Moon - the sheep is safe
-	elif body.get_name() == "Moon":
+	if body.get_name() == "Moon":
 		hide()
 		emit_signal("moon_land")
 		
+	# if player collides with anything else, assume its the Mob - game over
+	else:
+		hide() # player dissapears after being hit
+		emit_signal("hit")
+
+	
 	$CollisionShape2D.set_deferred("disabled", true) # disable collision so we don't trigger hit more than once
 	pass
 
