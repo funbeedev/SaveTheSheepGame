@@ -2,6 +2,8 @@ extends Area2D
 
 signal hit # a custom signal to indicate when player is hit
 
+signal moon_land # custom signal to indicate when we touch moon
+
 export var speed = 400 # how fast player will move in pixel/sec. export allows us to adjust the variable in the inspector menu
 var screen_size # size of the game window
 
@@ -17,11 +19,20 @@ func _ready():
 
 func _on_Player_body_entered(body):
 	
-	hide() # player dissapears after being hit
-	emit_signal("hit")
-	$CollisionShape2D.set_deferred("disabled", true) # disable collision so we don't trigger hit more than once
+	print("Player: Hit by Node: %s" %body.get_name())
 	
-	pass 
+	# if player collides with Mob - game over
+	if body.get_name() == "Mob":
+		hide() # player dissapears after being hit
+		emit_signal("hit")
+
+	# if player collides with Moon - the sheep is safe
+	elif body.get_name() == "Moon":
+		hide()
+		emit_signal("moon_land")
+		
+	$CollisionShape2D.set_deferred("disabled", true) # disable collision so we don't trigger hit more than once
+	pass
 
 # reset player when starting a new game
 func start(pos):

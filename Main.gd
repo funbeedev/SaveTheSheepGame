@@ -23,7 +23,7 @@ func new_game():
 	pass
 	
 
-# called when player is hit - game ends
+# called when player is hit with Mob - game ends
 func game_over():
 	#stop these timers
 	$ScoreTimer.stop()
@@ -41,7 +41,24 @@ func game_over():
 	
 	pass
 	
+# called when Player lands on Moon
+func next_stage():
 	
+	$ScoreTimer.stop()
+	$MobTimer.stop()
+	
+	# call next stage from HUD
+	$HUD.show_next_stage()
+	
+	# clear all objects belonging to the "mobs" group
+	# does so by calling the queue_free function on every mode in the group
+	get_tree().call_group("mobs", "queue_free")
+	
+	$Music.stop() # stop music
+	$GameoverSound.play() # play gameover sound
+	
+	pass 
+
 	
 # this timer is used to set a delay before game starts
 func _on_StartTimer_timeout():
@@ -85,4 +102,6 @@ func _on_MobTimer_timeout():
 	mob.linear_velocity = mob.linear_velocity.rotated(direction)
 	
 	pass
+
+
 

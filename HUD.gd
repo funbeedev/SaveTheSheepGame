@@ -21,6 +21,20 @@ func show_game_over():
 	yield(get_tree().create_timer(1), "timeout") # for adding a delay
 	$StartButton.show()
 
+# when we land on moon
+func show_next_stage():
+	show_message("The Sheep is Safe!")
+	
+	# wait until timer counts down
+	yield($MessageTimer, "timeout")
+	
+	$Message.text = "Save more Sheep!"
+	$Message.show()
+	# Make a oneshot timer and wait for it to finish
+	yield(get_tree().create_timer(1), "timeout") # for adding a delay
+	$StartButton.show()
+
+
 func update_score(score):
 	$ScoreLabel.text = str(score)
 
