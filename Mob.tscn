@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://moonshot-assets/art/stars_1.png" type="Texture" id=1]
+[ext_resource path="res://Mob.gd" type="Script" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "stars",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 36.0
+height = 0.0
+
+[node name="Mob" type="RigidBody2D"]
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 45, 43 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+animation = "stars"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 45, 45 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

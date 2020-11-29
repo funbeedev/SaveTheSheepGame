@@ -16,8 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="moonshot"
-run/main_scene="res://hello.tscn"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [rendering]
 
