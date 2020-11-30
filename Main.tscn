@@ -46,6 +46,7 @@ curve = SubResource( 1 )
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2( -80, -442 )
+rotation = 7.77697e-06
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 

@@ -38,6 +38,11 @@ func show_next_stage():
 func update_score(score):
 	$ScoreLabel.text = str(score)
 
+
+func update_sheep_score(score):
+	$SheepScore.text = str(score)
+
+
 # when button is pressed hide the button and emit the signal
 func _on_StartButton_pressed():
 	$StartButton.hide()

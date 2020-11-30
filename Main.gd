@@ -2,6 +2,7 @@ extends Node
 
 export (PackedScene) var Mob
 var score
+var sheep_score = 0
 
 # starting point for game
 func _ready():
@@ -57,6 +58,9 @@ func next_stage():
 	$Music.stop() # stop music
 	$GameoverSound.play() # play gameover sound
 	
+	# update the sheep score in HUD
+	sheep_score += 1
+	$HUD.update_sheep_score(sheep_score)
 	pass 
 
 	
