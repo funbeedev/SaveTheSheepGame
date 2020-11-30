@@ -76,13 +76,16 @@ func _process(delta):
 	
 	
 #	# choose sprite icons to use when moving
-#	if velocity.x != 0:
-#		$AnimatedSprite.animation = "walk"
-#		$AnimatedSprite.flip_v = false
-#		$AnimatedSprite.flip_h = velocity.x < 0
-#	elif velocity.y != 0:
-#		$AnimatedSprite.animation = "up"
-#		$AnimatedSprite.flip_v = velocity.y > 0
+	
+	# when we are moving on x axis
+	if velocity.x != 0:
+		
+		$AnimatedSprite.animation = "walk"
+		$AnimatedSprite.flip_v = false
+		$AnimatedSprite.flip_h = velocity.x < 0 # flip h when we are going left
+	elif velocity.y != 0:
+		$AnimatedSprite.animation = "up"
+		$AnimatedSprite.flip_v = velocity.y > 0
 		
 	
 
