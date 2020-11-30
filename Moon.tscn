@@ -10,21 +10,21 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 112.0
 height = 0.0
 
 [node name="Moon" type="StaticBody2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 920, 288 )
+position = Vector2( 928, 504 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "moon_1"
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 1000, 250 )
+position = Vector2( 984, 552 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 920, 280 )
-shape = SubResource( 3 )
+position = Vector2( 936, 496 )
+shape = SubResource( 2 )
