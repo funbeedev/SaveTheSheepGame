@@ -21,6 +21,7 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="ScoreLabel" type="Label" parent="."]
+visible = false
 margin_left = 440.0
 margin_right = 485.0
 margin_bottom = 78.0

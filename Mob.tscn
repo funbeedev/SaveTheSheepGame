@@ -13,7 +13,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 36.0
+radius = 33.4658
 height = 0.0
 
 [node name="Mob" type="RigidBody2D" groups=[
@@ -23,15 +23,14 @@ collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 45, 43 )
+position = Vector2( 270.615, 18.3058 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "stars"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 42.1716, 45 )
+position = Vector2( 268.909, 19.1833 )
 rotation = 1.5708
 shape = SubResource( 2 )
 

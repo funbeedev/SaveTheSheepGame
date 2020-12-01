@@ -12,15 +12,15 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 200.0
+radius = 172.806
 height = 0.0
 
 [node name="Moon" type="StaticBody2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 912, 488 )
-scale = Vector2( 0.877683, 0.860515 )
+position = Vector2( 941, 514 )
+scale = Vector2( 0.753219, 0.748927 )
 frames = SubResource( 1 )
 animation = "moon_1"
 playing = true
@@ -29,5 +29,8 @@ playing = true
 position = Vector2( 984, 552 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 912, 488 )
+position = Vector2( 940, 518 )
 shape = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -7,10 +7,11 @@
 [ext_resource path="res://moonshot-assets/music/House In a Forest Loop.ogg" type="AudioStream" id=5]
 [ext_resource path="res://moonshot-assets/music/gameover.wav" type="AudioStream" id=6]
 [ext_resource path="res://Moon.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GameBackground.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -36.7407, -443.285, 0, 0, 0, 0, -29.1454, -438.922, 0, 0, 0, 0, 73.4815, -443.285, 0, 0, 0, 0, 352, -440, 0, 0, 0, 0, 845.037, -443.285, 0, 0, 0, 0, 776, -442 )
+"points": PoolVector2Array( 0, 0, 0, 0, -36.7407, -443.285, 0, 0, 0, 0, -29.1454, -438.922, 0, 0, 0, 0, 73.4815, -443.285, 0, 0, 0, 0, 259.892, -443.285, 0, 0, 0, 0, 352, -440, 0, 0, 0, 0, 417.684, -443.285, 0, 0, 0, 0, 845.037, -443.285, 0, 0, 0, 0, 776, -442 )
 }
 
 [node name="Main" type="Node"]
@@ -20,10 +21,14 @@ Mob = ExtResource( 3 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0901961, 0.0901961, 0.0666667, 1 )
+margin_top = -6.10352e-05
+margin_bottom = -6.10352e-05
+color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="GameBackground" parent="." instance=ExtResource( 8 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 50, 304 )
@@ -41,12 +46,13 @@ one_shot = true
 position = Vector2( 50, 300 )
 
 [node name="MobPath" type="Path2D" parent="."]
-position = Vector2( 287.667, 296 )
+position = Vector2( 184, 288 )
 scale = Vector2( 0.861895, 0.649695 )
 curve = SubResource( 1 )
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2( -48, -442 )
+position = Vector2( -36.7407, -443.285 )
+rotation = 0.533676
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
