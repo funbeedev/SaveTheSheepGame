@@ -83,9 +83,9 @@ func _process(delta):
 		$AnimatedSprite.animation = "walk"
 		$AnimatedSprite.flip_v = false
 		$AnimatedSprite.flip_h = velocity.x < 0 # flip h when we are going left
-	elif velocity.y != 0:
-		$AnimatedSprite.animation = "up"
-		$AnimatedSprite.flip_v = velocity.y > 0
+#	elif velocity.y != 0:
+#		$AnimatedSprite.animation = "up"
+#		$AnimatedSprite.flip_v = velocity.y > 0
 		
 	
 
