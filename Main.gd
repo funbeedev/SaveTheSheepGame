@@ -37,8 +37,9 @@ func game_over():
 	# does so by calling the queue_free function on every mode in the group
 	get_tree().call_group("mobs", "queue_free")
 
-	$Music.stop() # stop music
-	$GameoverSound.play() # play gameover sound
+	$Music.stop()
+	$GameoverSound.play()
+	$SheepHitSound.play() 
 	
 	pass
 	
@@ -55,8 +56,9 @@ func next_stage():
 	# does so by calling the queue_free function on every mode in the group
 	get_tree().call_group("mobs", "queue_free")
 	
-	$Music.stop() # stop music
-	$GameoverSound.play() # play gameover sound
+	$Music.stop()
+	$WinSound.play()
+	$SheepWinSound.play()
 	
 	# update the sheep score in HUD
 	sheep_score += 1
