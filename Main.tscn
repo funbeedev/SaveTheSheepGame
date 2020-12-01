@@ -44,6 +44,10 @@ wait_time = 0.5
 [node name="ScoreTimer" type="Timer" parent="."]
 
 [node name="StartTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="PlayerStartTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
@@ -86,4 +90,5 @@ stream = ExtResource( 11 )
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+[connection signal="timeout" from="PlayerStartTimer" to="." method="_on_PlayerStartTimer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]

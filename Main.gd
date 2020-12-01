@@ -14,7 +14,6 @@ func _ready():
 func new_game():
 	score = 0 # reset score
 	
-	$Player.start($StartPosition.position) # set player position
 	$StartTimer.start() # start the starttimer
 	
 	$HUD.update_score(score)
@@ -69,11 +68,18 @@ func next_stage():
 # this timer is used to set a delay before game starts
 func _on_StartTimer_timeout():
 	
-	# start these timers
 	$MobTimer.start()
 	$ScoreTimer.start()
+	$PlayerStartTimer.start()
 	pass 
 
+# use to delay before player can begin 
+func _on_PlayerStartTimer_timeout():
+	
+	# enable the player and set position
+	$Player.start($StartPosition.position) 
+	pass 
+	
 # increment score by 1 on timeout
 func _on_ScoreTimer_timeout():
 	
@@ -99,7 +105,7 @@ func _on_MobTimer_timeout():
 	# Set the mobs position to a random location
 	mob.position = $MobPath/MobSpawnLocation.position
 	
-	#Add some randomness to the direction
+	# Add some randomness to the direction
 #	direction += rand_range(-PI / 4, PI / 4)
 #	mob.rotation = direction
 	
@@ -108,6 +114,3 @@ func _on_MobTimer_timeout():
 	mob.linear_velocity = mob.linear_velocity.rotated(direction)
 	
 	pass
-
-
-

@@ -21,6 +21,8 @@ func _on_Player_body_entered(body):
 	
 	print("Player: Hit by Node: %s" %body.get_name())
 	
+	$CollisionShape2D.set_deferred("disabled", true) # disable collision so we don't trigger hit more than once
+
 	# if player collides with Moon - the sheep is safe
 	if body.get_name() == "Moon":
 		hide()
@@ -31,8 +33,6 @@ func _on_Player_body_entered(body):
 		hide() # player dissapears after being hit
 		emit_signal("hit")
 
-	
-	$CollisionShape2D.set_deferred("disabled", true) # disable collision so we don't trigger hit more than once
 	pass
 
 # reset player when starting a new game
