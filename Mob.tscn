@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://moonshot-assets/art/star1.png" type="Texture" id=1]
+[ext_resource path="res://moonshot-assets/art/stars/star1.png" type="Texture" id=1]
 [ext_resource path="res://Mob.gd" type="Script" id=2]
-[ext_resource path="res://moonshot-assets/art/star2.png" type="Texture" id=3]
+[ext_resource path="res://moonshot-assets/art/stars/star2.png" type="Texture" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -27,6 +27,7 @@ position = Vector2( 270.615, 18.3058 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "stars"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

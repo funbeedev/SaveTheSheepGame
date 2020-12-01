@@ -32,13 +32,19 @@ __meta__ = {
 }
 
 [node name="Message" type="Label" parent="."]
-margin_left = 230.0
-margin_top = 193.0
-margin_right = 770.0
-margin_bottom = 271.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -368.0
+margin_top = -108.0
+margin_right = 379.0
+margin_bottom = 51.0
 custom_fonts/font = SubResource( 1 )
-text = "Save the Sheep!"
+text = "Save the Sheep!
+Get them to the moon!"
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -51,6 +57,7 @@ custom_fonts/font = SubResource( 1 )
 shortcut = SubResource( 3 )
 text = "Start"
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -65,6 +72,7 @@ margin_bottom = 40.0
 custom_fonts/font = SubResource( 4 )
 text = "0 "
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -76,6 +84,7 @@ margin_bottom = 49.0
 custom_fonts/font = SubResource( 4 )
 text = "sheep safe"
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

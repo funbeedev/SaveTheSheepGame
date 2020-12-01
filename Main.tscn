@@ -4,13 +4,13 @@
 [ext_resource path="res://Main.gd" type="Script" id=2]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
-[ext_resource path="res://moonshot-assets/music/otts.ogg" type="AudioStream" id=5]
-[ext_resource path="res://moonshot-assets/music/gameover.wav" type="AudioStream" id=6]
+[ext_resource path="res://moonshot-assets/music/gameover-sound/gameover.wav" type="AudioStream" id=5]
+[ext_resource path="res://moonshot-assets/music/background-music/otts.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Moon.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GameBackground.tscn" type="PackedScene" id=8]
-[ext_resource path="res://moonshot-assets/music/Komiku_-_11_-_Trop_la_win.wav" type="AudioStream" id=9]
-[ext_resource path="res://moonshot-assets/music/sheepBleet-1.wav" type="AudioStream" id=10]
-[ext_resource path="res://moonshot-assets/music/sheepHit.wav" type="AudioStream" id=11]
+[ext_resource path="res://moonshot-assets/music/sheep-sounds/sheepHit.wav" type="AudioStream" id=9]
+[ext_resource path="res://moonshot-assets/music/win-sound/Komiku_-_11_-_Trop_la_win.wav" type="AudioStream" id=10]
+[ext_resource path="res://moonshot-assets/music/sheep-sounds/sheepBleet-1.wav" type="AudioStream" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -32,10 +32,8 @@ __meta__ = {
 }
 
 [node name="GameBackground" parent="." instance=ExtResource( 8 )]
-margin_left = -8.0
-margin_top = -8.0
-margin_right = -8.0
-margin_bottom = -8.0
+margin_top = -6.10352e-05
+margin_bottom = -6.10352e-05
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 50, 304 )
@@ -56,6 +54,9 @@ position = Vector2( 50, 300 )
 position = Vector2( 184, 288 )
 scale = Vector2( 0.861895, 0.649695 )
 curve = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2( -36.7407, -443.285 )
@@ -64,20 +65,20 @@ rotation = 0.533676
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 area_mask = 2147483649
 
 [node name="GameoverSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 5 )
 
 [node name="SheepHitSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 11 )
-
-[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
 
-[node name="SheepWinSound" type="AudioStreamPlayer2D" parent="."]
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 10 )
+
+[node name="SheepWinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
 
 [node name="Moon" parent="." instance=ExtResource( 7 )]
 [connection signal="hit" from="Player" to="." method="game_over"]
