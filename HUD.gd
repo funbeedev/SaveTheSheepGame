@@ -15,21 +15,38 @@ func show_game_over():
 	# wait until timer counts down
 	yield($MessageTimer, "timeout")
 	
-	$Message.text = "Save the Sheep!"
+	$Message.text = "Try again! Save the Sheep!"
 	$Message.show()
 	# Make a oneshot timer and wait for it to finish
 	yield(get_tree().create_timer(1), "timeout") # for adding a delay
 	$StartButton.show()
 
 # when we land on moon
-func show_next_stage():
+func show_next_stage(sheep_score):
+
 	show_message("The Sheep is Safe!")
 	
 	# wait until timer counts down
 	yield($MessageTimer, "timeout")
 	
 	$Message.text = "Save more Sheep!"
+	
+	# Message to show will depend on sheep score
+	if(sheep_score < 5):
+		$LevelMessage.text = "(Next target: Let's reach 5 sheep safe!)"
+	elif (sheep_score < 10):
+		$LevelMessage.text = "(Next target: Let's reach 10 sheep safe!)"
+	elif (sheep_score < 15):
+		$LevelMessage.text = "(Next target: Let's reach 15 sheep safe!)"
+	elif (sheep_score < 22):
+		$LevelMessage.text = "(Next target: Let's reach 22 sheep safe!)"
+	elif (sheep_score >= 22):
+		$LevelMessage.text = "All sheep are safe now! Celebrate!"
+	
+		
 	$Message.show()
+	$LevelMessage.show()
+	 
 	# Make a oneshot timer and wait for it to finish
 	yield(get_tree().create_timer(1), "timeout") # for adding a delay
 	$StartButton.show()
@@ -52,6 +69,7 @@ func _on_StartButton_pressed():
 # hide the message label on timeout
 func _on_MessageTimer_timeout():
 	$Message.hide()
+	$LevelMessage.hide()
 	pass
 
 

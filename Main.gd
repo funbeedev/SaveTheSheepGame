@@ -3,6 +3,7 @@ extends Node
 export (PackedScene) var Mob
 var score
 var sheep_score = 0
+var mob_randomness = false
 
 # starting point for game
 func _ready():
@@ -48,9 +49,6 @@ func next_stage():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 	
-	# call next stage from HUD
-	$HUD.show_next_stage()
-	
 	# clear all objects belonging to the "mobs" group
 	# does so by calling the queue_free function on every mode in the group
 	get_tree().call_group("mobs", "queue_free")
@@ -59,10 +57,55 @@ func next_stage():
 	$WinSound.play()
 	$SheepWinSound.play()
 	
+	### SET DIFFICULTY - scale player, increase mob spawn ###
+	print("Main: sheep score = %s" % sheep_score)
+	
+	mob_randomness = !mob_randomness
+	
+	if(sheep_score < 1):
+		$Player.scale = Vector2(1, 1)
+		
+	elif(sheep_score < 4):
+		$Player.scale = Vector2(1.2, 1.2)
+		$MobTimer.wait_time = 0.4
+		
+	elif(sheep_score < 7):
+		$Player.scale = Vector2(1.3, 1.3)
+		$MobTimer.wait_time = 0.4
+	
+	elif(sheep_score < 10):
+		$Player.scale = Vector2(1.4, 1.4)
+		$MobTimer.wait_time = 0.3
+	
+	elif(sheep_score < 13):
+		$Player.scale = Vector2(1.5, 1.5)
+		$MobTimer.wait_time = 0.3
+			
+	elif(sheep_score < 16):
+		$Player.scale = Vector2(1.6, 1.6)
+		$MobTimer.wait_time = 0.3
+		
+	elif(sheep_score < 19):
+		$Player.scale = Vector2(2.3, 2.3)
+		$MobTimer.wait_time = 0.3
+		
+	elif(sheep_score < 22):
+		$Player.scale = Vector2(2.5, 2.5)
+		$MobTimer.wait_time = 0.2
+		
+	else:
+		$Player.scale = Vector2(3.0, 3.0)
+		$MobTimer.wait_time = 0.1
+		pass
+		
+
 	# update the sheep score in HUD
 	sheep_score += 1
 	$HUD.update_sheep_score(sheep_score)
-	pass 
+
+	# call next stage from HUD
+	$HUD.show_next_stage(sheep_score)
+	
 
 	
 # this timer is used to set a delay before game starts
@@ -106,8 +149,9 @@ func _on_MobTimer_timeout():
 	mob.position = $MobPath/MobSpawnLocation.position
 	
 	# Add some randomness to the direction
-#	direction += rand_range(-PI / 4, PI / 4)
-#	mob.rotation = direction
+	if(mob_randomness == true):
+		direction += rand_range(-PI / 4, PI / 4)
+		mob.rotation = direction
 	
 	#set the velocitiy (speed & direction)
 	mob.linear_velocity = Vector2(rand_range(mob.min_speed, mob.max_speed), 0)
