@@ -27,5 +27,5 @@ position = Vector2( 510, 298 )
 scale = Vector2( 5.14, 3.02 )
 frames = SubResource( 1 )
 animation = "space"
-frame = 1
+frame = 5
 playing = true
