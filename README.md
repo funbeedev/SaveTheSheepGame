@@ -18,8 +18,7 @@ Go to the [Save The Sheep itch.io page](https://funbeedev.itch.io/save-the-sheep
 
 ## Game Screenshots
 
-![Screenshot1](https://img.itch.zone/aW1hZ2UvODQwMTM0LzQ3MDk5NjMucG5n/original/SRgGvJ.png)
-![Screenshot2](https://img.itch.zone/aW1hZ2UvODQwMTM0LzQ3MDk5NjQucG5n/original/7gQVSJ.png)
-![Screenshot3](https://img.itch.zone/aW1hZ2UvODQwMTM0LzQ3MDk5NjEucG5n/original/CJCeR0.png)
-![Screenshot4](https://img.itch.zone/aW1hZ2UvODQwMTM0LzQ3MDk5NjIucG5n/original/J3Y1Uv.png)
-![Screenshot5](https://img.itch.zone/aW1hZ2UvODQwMTM0LzQ3MDk5NjAucG5n/original/%2B5gCZl.png)
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://img.itch.zone/aW1hZ2UvODQwMTM0LzQ3MDk5NjMucG5n/original/SRgGvJ.png">  |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://img.itch.zone/aW1hZ2UvODQwMTM0LzQ3MDk5NjEucG5n/original/CJCeR0.png">
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://img.itch.zone/aW1hZ2UvODQwMTM0LzQ3MDk5NjIucG5n/original/J3Y1Uv.png">  |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://img.itch.zone/aW1hZ2UvODQwMTM0LzQ3MDk5NjAucG5n/original/%2B5gCZl.png">
