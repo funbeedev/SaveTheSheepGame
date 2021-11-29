@@ -19,7 +19,7 @@ func new_game():
 	$StartTimer.start() # start the starttimer
 	
 	$HUD.update_score(score)
-	$HUD.show_message("Get ready to play!")
+	$HUD.show_message("Ready...")
 	
 	$Music.play() # start music
 	pass

@@ -11,14 +11,14 @@ func show_message(text):
 
 # what happens when game ends. show game over message, then show start game message, pause a bit then show button
 func show_game_over():
-	show_message("Game Over :(")
+	#show_message("")
 	# wait until timer counts down
-	yield($MessageTimer, "timeout")
+	#yield($MessageTimer, "timeout")
 	
-	$Message.text = "Try again! Save the Sheep!"
+	$Message.text = "Game Over :( \nTry again! Save the Sheep!"
 	$Message.show()
 	# Make a oneshot timer and wait for it to finish
-	yield(get_tree().create_timer(1), "timeout") # for adding a delay
+	yield(get_tree().create_timer(0.5), "timeout") # for adding a delay
 	$StartButton.show()
 
 # when we land on moon
