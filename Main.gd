@@ -3,6 +3,7 @@ extends Node
 export (PackedScene) var Mob
 var score
 var sheep_score = 0
+var show_next_goal = false
 var mob_randomness = false
 
 # starting point for game
@@ -53,15 +54,11 @@ func next_stage():
 	# does so by calling the queue_free function on every mode in the group
 	get_tree().call_group("mobs", "queue_free")
 	
-	$Music.stop()
-	$WinSound.play()
-	$SheepWinSound.play()
-	
 	### SET DIFFICULTY - scale player, increase mob spawn ###
 	print("Main: sheep score = %s" % sheep_score)
 	
 	mob_randomness = !mob_randomness
-	
+
 	if(sheep_score < 1):
 		$Player.scale = Vector2(1, 1)
 		
@@ -89,7 +86,7 @@ func next_stage():
 		$Player.scale = Vector2(2.3, 2.3)
 		$MobTimer.wait_time = 0.3
 		
-	elif(sheep_score < 22):
+	elif(sheep_score < 25):
 		$Player.scale = Vector2(2.5, 2.5)
 		$MobTimer.wait_time = 0.2
 		
@@ -99,12 +96,28 @@ func next_stage():
 		pass
 		
 
+	# when sheep arrives
 	# update the sheep score in HUD
 	sheep_score += 1
 	$HUD.update_sheep_score(sheep_score)
+	# play sheep sound
+	$SheepWinSound.play()
+	
+	# decide when we should show next goal to player
+	if ((sheep_score == 1 ) or (sheep_score % 5 == 0)):
+		show_next_goal = true
+	else:
+		show_next_goal = false
+		
+	if (show_next_goal == true):
+		$Music.stop()
+		$WinSound.play()
 
-	# call next stage from HUD
-	$HUD.show_next_stage(sheep_score)
+		# call next stage from HUD and show start button
+		$HUD.show_next_stage(sheep_score)
+	else:
+		# manually call to start next stage
+		_on_StartTimer_timeout()
 	
 
 	

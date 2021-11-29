@@ -32,15 +32,17 @@ func show_next_stage(sheep_score):
 	$Message.text = "Save more Sheep!"
 	
 	# Message to show will depend on sheep score
-	if(sheep_score < 5):
+	if(sheep_score == 1):
 		$LevelMessage.text = "(Next target: Let's reach 5 sheep safe!)"
-	elif (sheep_score < 10):
+	elif (sheep_score == 5):
 		$LevelMessage.text = "(Next target: Let's reach 10 sheep safe!)"
-	elif (sheep_score < 15):
+	elif (sheep_score == 10):
 		$LevelMessage.text = "(Next target: Let's reach 15 sheep safe!)"
-	elif (sheep_score < 22):
-		$LevelMessage.text = "(Next target: Let's reach 22 sheep safe!)"
-	elif (sheep_score >= 22):
+	elif (sheep_score == 15):
+		$LevelMessage.text = "(Next target: Let's reach 20 sheep safe!)"
+	elif (sheep_score == 20):
+		$LevelMessage.text = "(Next target: Let's reach 25 sheep safe!)"
+	elif (sheep_score >= 25):
 		$LevelMessage.text = "All sheep are safe now! Celebrate!"
 	
 		

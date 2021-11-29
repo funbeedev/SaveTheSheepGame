@@ -102,7 +102,7 @@ margin_top = -33.0
 margin_right = 343.53
 margin_bottom = 56.0
 custom_fonts/font = SubResource( 5 )
-text = "22 sheep need saving, can you help?
+text = "25 sheep need saving, can you help?
 (Difficulty increases)"
 autowrap = true
 __meta__ = {
