@@ -1,20 +1,27 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://moonshot-assets/art/stars/star1.png" type="Texture" id=1]
 [ext_resource path="res://Mob.gd" type="Script" id=2]
 [ext_resource path="res://moonshot-assets/art/stars/star2.png" type="Texture" id=3]
+[ext_resource path="res://moonshot-assets/art/bugs/moody-bug1.png" type="Texture" id=4]
+[ext_resource path="res://moonshot-assets/art/bugs/moody-bug2.png" type="Texture" id=5]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "stars",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "bugs",
+"speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 33.4658
-height = 0.0
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 16.8167
+height = 10.5486
 
 [node name="Mob" type="RigidBody2D" groups=[
 "mobs",
@@ -24,14 +31,14 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 270.615, 18.3058 )
-scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 1 )
-animation = "stars"
+frames = SubResource( 3 )
+animation = "bugs"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 268.909, 19.1833 )
+position = Vector2( 271.909, 19.1833 )
 rotation = 1.5708
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

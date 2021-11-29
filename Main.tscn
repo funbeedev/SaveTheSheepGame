@@ -64,7 +64,7 @@ __meta__ = {
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2( -36.7407, -443.285 )
-rotation = 0.533676
+rotation = 0.53363
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
