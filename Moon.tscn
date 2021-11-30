@@ -1,9 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://moonshot-assets/art/moon/moon.png" type="Texture" id=1]
+[ext_resource path="res://moonshot-assets/art/moon/tree.png" type="Texture" id=2]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "tree",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "moon_1",
@@ -17,10 +23,10 @@ height = 0.0
 [node name="Moon" type="StaticBody2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 941, 514 )
-scale = Vector2( 0.753219, 0.748927 )
+position = Vector2( 963, 458.702 )
+scale = Vector2( 2.48129, 2.37665 )
 frames = SubResource( 1 )
-animation = "moon_1"
+animation = "tree"
 playing = true
 
 [node name="Position2D" type="Position2D" parent="."]

@@ -6,6 +6,8 @@ var sheep_score = 0
 var show_next_goal = false
 var mob_randomness = false
 
+var bug = true # to toggle bug game configuration
+
 # starting point for game
 func _ready():
 	randomize()
@@ -22,6 +24,9 @@ func new_game():
 	$HUD.show_message("Ready...")
 	
 	$Music.play() # start music
+	
+	if(bug == true):
+		$StepGrassSound.play() # start grass sound effect
 	pass
 	
 
@@ -39,6 +44,9 @@ func game_over():
 	get_tree().call_group("mobs", "queue_free")
 
 	$Music.stop()
+	if(bug == true):
+		$StepGrassSound.stop()
+	pass
 	$GameoverSound.play()
 	$SheepHitSound.play() 
 	
@@ -111,6 +119,9 @@ func next_stage():
 		
 	if (show_next_goal == true):
 		$Music.stop()
+		if(bug == true):
+			$StepGrassSound.stop()
+		pass
 		$WinSound.play()
 
 		# call next stage from HUD and show start button

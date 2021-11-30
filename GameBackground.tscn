@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://moonshot-assets/art/background/space5.png" type="Texture" id=1]
 [ext_resource path="res://moonshot-assets/art/background/space1.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://moonshot-assets/art/background/space2.png" type="Texture" id=4]
 [ext_resource path="res://moonshot-assets/art/background/space4.png" type="Texture" id=5]
 [ext_resource path="res://moonshot-assets/art/background/space6.png" type="Texture" id=6]
+[ext_resource path="res://moonshot-assets/art/background/grass1.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -13,19 +14,24 @@ animations = [ {
 "loop": true,
 "name": "space",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "grass",
+"speed": 5.0
 } ]
 
 [node name="GameBackground" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 9.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 510, 298 )
-scale = Vector2( 5.14, 3.02 )
+position = Vector2( 512.752, 297.512 )
+scale = Vector2( 2.47836, 1.49295 )
 frames = SubResource( 1 )
-animation = "space"
-frame = 5
+animation = "grass"
 playing = true

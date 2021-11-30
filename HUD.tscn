@@ -45,7 +45,7 @@ margin_top = -211.572
 margin_right = 380.633
 margin_bottom = -52.5717
 custom_fonts/font = SubResource( 1 )
-text = "Save the Sheep, get them to the moon!"
+text = "Save the Sheep, get them to the tree!"
 autowrap = true
 __meta__ = {
 "_edit_lock_": true,
