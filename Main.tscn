@@ -68,9 +68,8 @@ rotation = 1.52715
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
-[node name="Music" type="AudioStreamPlayer2D" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-area_mask = 2147483649
 
 [node name="GameoverSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
