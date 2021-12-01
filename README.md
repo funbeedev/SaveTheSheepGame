@@ -1,9 +1,9 @@
 # SaveTheSheepGame
 
-<!-- ![SaveTheSheepPoster](https://img.itch.zone/aW1nLzQ3MDk5NTgucG5n/315x250%23c/tDhUGO.png) -->
+![SaveTheSheepPoster](https://img.itch.zone/aW1nLzc1Njk4NzcucG5n/315x250%23c/dggCgi.png)
 
-Save The Sheep is my first video game designed using [Godot game engine](https://godotengine.org/).
-Submitted to the [itch.io Game Off 2020 jam](https://funbeedev.itch.io/save-the-sheep).
+A simple game made for fun. Built using [Godot game engine](https://godotengine.org/).
+Submitted to the [itch.io Game Off 2021 jam](https://funbeedev.itch.io/v20-save-the-sheep).
 
 ## About game
 
@@ -14,14 +14,11 @@ Simple 2D game in which you have to save sheep by taking them to safety. Dodge t
 Use the keyboard arrow keys to navigate the sheep through space.
 
 ## Downloading the game
-Go to the [Save The Sheep itch.io page](https://funbeedev.itch.io/save-the-sheep). There are Linux and Windows executables available to download. 
+Go to the [Save The Sheep itch.io page](https://funbeedev.itch.io/v20-save-the-sheep). There are Linux and Windows executables available to download. 
 
 ## Game Screenshots
 
-## Save the Sheep! Get them to the tree!
-
-<!-- ## Save the Sheep! Get them to the moon!
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
-|<img width="1604" alt="SaveTheSheepGame" src="https://img.itch.zone/aW1hZ2UvODQwMTM0LzQ3MDk5NjMucG5n/original/SRgGvJ.png">  |  <img width="1604" alt="SaveTheSheepGame" src="https://img.itch.zone/aW1hZ2UvODQwMTM0LzQ3MDk5NjEucG5n/original/CJCeR0.png">
-|<img width="1604" alt="SaveTheSheepGame" src="https://img.itch.zone/aW1hZ2UvODQwMTM0LzQ3MDk5NjIucG5n/original/J3Y1Uv.png">  |  <img width="1604" alt="SaveTheSheepGame" src="https://img.itch.zone/aW1hZ2UvODQwMTM0LzQ3MDk5NjAucG5n/original/%2B5gCZl.png"> -->
+|<img width="1604" alt="SaveTheSheepGame" src="https://img.itch.zone/aW1hZ2UvMTMwMTIwOC83NTY5ODgxLnBuZw==/original/vW0RkY.png">  |  <img width="1604" alt="SaveTheSheepGame" src="https://img.itch.zone/aW1hZ2UvMTMwMTIwOC83NTY5ODgwLnBuZw==/original/Bg%2F7zu.png">
+|<img width="1604" alt="SaveTheSheepGame" src="https://img.itch.zone/aW1hZ2UvMTMwMTIwOC83NTY5ODc5LnBuZw==/original/1F6QGp.png">  |  <img width="1604" alt="SaveTheSheepGame" src="https://img.itch.zone/aW1hZ2UvMTMwMTIwOC83NTY5ODc4LnBuZw==/original/0JtAe4.png">
