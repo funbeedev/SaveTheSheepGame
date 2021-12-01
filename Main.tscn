@@ -15,7 +15,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 887.359, -552.667, 0, 0, 0, 0, 898, -309.047, 0, 0, 0, 0, 899.132, -181.515, 0, 0, 0, 0, 898.906, -21.2812, 0, 0, 0, 0, 901.17, 116.062, 0, 0, 0, 0, 900.944, 201.083, 0, 0, 0, 0, 901.17, 263.215, 0, 0, 0, 0, 899.698, 287.74, 0, 0, 0, 0, 897.321, 299.185, 0, 0, 0, 0, 890.982, 310.631 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1030.13, 194.557, 0, 0, 0, 0, 555.638, 608.401 )
 }
 
 [node name="Main" type="Node"]
@@ -34,12 +34,12 @@ __meta__ = {
 
 [node name="GameBackground" parent="." instance=ExtResource( 8 )]
 margin_left = -2.1189
-margin_top = 3.17831
+margin_top = 4.36752
 margin_right = -2.1189
-margin_bottom = 3.17834
+margin_bottom = 4.36755
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 50, 304 )
+position = Vector2( 30.522, 32.8065 )
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -55,16 +55,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="StartPosition" type="Position2D" parent="."]
-position = Vector2( 50, 300 )
-
-[node name="MobPath" type="Path2D" parent="."]
-position = Vector2( -7425.5, 386.848 )
-scale = Vector2( 9.3591, 0.647976 )
-curve = SubResource( 1 )
-
-[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2( 887.359, -552.667 )
-rotation = 1.52715
+position = Vector2( 29.0237, 39.2946 )
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
@@ -88,6 +79,14 @@ stream = ExtResource( 12 )
 volume_db = -10.0
 
 [node name="Moon" parent="." instance=ExtResource( 7 )]
+position = Vector2( 9.5896, 9.1575 )
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2( 1030.13, 194.557 )
+rotation = 2.42436
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="moon_land" from="Player" to="." method="next_stage"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]

@@ -72,7 +72,7 @@ func next_stage():
 		
 	elif(sheep_score < 4):
 		$Player.scale = Vector2(1.2, 1.2)
-		$MobTimer.wait_time = 0.4
+		$MobTimer.wait_time = 0.3
 		
 	elif(sheep_score < 7):
 		$Player.scale = Vector2(1.3, 1.3)
@@ -173,9 +173,9 @@ func _on_MobTimer_timeout():
 	mob.position = $MobPath/MobSpawnLocation.position
 	
 	# Add some randomness to the direction
-	if(mob_randomness == true):
-		direction += rand_range(-PI / 4, PI / 4)
-		mob.rotation = direction
+	#if(mob_randomness == true):
+		#direction += rand_range(-PI / 4, PI / 4)
+		#mob.rotation = direction
 	
 	#set the velocitiy (speed & direction)
 	mob.linear_velocity = Vector2(rand_range(mob.min_speed, mob.max_speed), 0)

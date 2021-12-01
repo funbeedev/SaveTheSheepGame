@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 export var min_speed = 100
-export var max_speed = 200
+export var max_speed = 500
 
 
 # Called when the node enters the scene tree for the first time.

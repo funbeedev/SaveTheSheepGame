@@ -17,23 +17,23 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 172.806
+radius = 147.907
 height = 0.0
 
 [node name="Moon" type="StaticBody2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 963, 458.702 )
-scale = Vector2( 2.48129, 2.37665 )
+position = Vector2( 941.982, 476.813 )
+scale = Vector2( 2.12205, 1.96786 )
 frames = SubResource( 1 )
 animation = "tree"
 playing = true
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 984, 552 )
+position = Vector2( 976.865, 553.189 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 940, 518 )
+position = Vector2( 918.655, 512.115 )
 shape = SubResource( 2 )
 __meta__ = {
 "_edit_group_": true
